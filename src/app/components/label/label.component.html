@@ -1,0 +1,36 @@
+<div>
+  <div>
+    <span class="label-text">{{label_text}}</span>
+    <span *ngIf="asterisk" class="asterisk">&#42;</span>
+    <span *ngIf="tooltip" class="info">&#63;</span>
+  </div>
+
+  <div>
+    <ng-content></ng-content>
+  </div>
+</div>
+
+<style>
+  .label-text {
+    font-family: 'Inter';
+    font-size: 14px;
+    color: #6C757D;
+  }
+  .asterisk {
+    font-family: 'Inter';
+    font-size: 12px;
+    color: #DC1919
+  }
+  .info {
+    color: #BBC1CC;
+    display: inline-block;
+    vertical-align: center;
+    text-align: center;
+    width: 12.6px;
+    height: 12.6px;
+    font-size: 0.8em;
+    border-radius: 50%;
+    border: 1px solid;
+    margin-left: 5px;
+  }
+</style>
