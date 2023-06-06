@@ -4,6 +4,7 @@ import {Component, Input} from '@angular/core'
   selector: 'app-label',
   templateUrl: 'label.component.html'
 })
+
 export class LabelComponent {
   @Input() labelText: string = '';
   @Input() tooltipText: string = '';
