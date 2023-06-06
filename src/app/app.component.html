@@ -1,13 +1,28 @@
-<app-label
-  [label_text]="'Обязательно к заполнению'"
-  [asterisk]="true"
-  [tooltip]="true"
->
-  <input type="checkbox">
-</app-label>
+<div class="label-content">
+  <app-label
+    [labelText]="'Обязательно к заполнению'"
+    [asterisk]="true"
+    [tooltip]="true"
+    [tooltipText]="'Надо бы заполнить это поле'"
+  >
+    <input type="checkbox">
+  </app-label>
+</div>
 
-<app-label
-  [label_text]="'Не очень обязательно к заполнению'"
-  [asterisk]="true"
-  [tooltip]="false"
-><input type="date"></app-label>
+<div class="label-content">
+  <app-label
+    [labelText]="'Не очень обязательно к заполнению'"
+    [asterisk]="false"
+    [tooltip]="true"
+    [tooltipText]="'Можно не заполнять это поле'"
+  ><input type="date"></app-label>
+</div>
+
+<style>
+  .label-content {
+    padding: 10px;
+    display: flex;
+    width: 150px;
+    box-sizing: border-box;
+  }
+</style>

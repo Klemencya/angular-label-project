@@ -5,7 +5,8 @@ import {Component, Input} from '@angular/core'
   templateUrl: 'label.component.html'
 })
 export class LabelComponent {
-  @Input() label_text: string;
-  @Input() asterisk: boolean;
-  @Input() tooltip: boolean;
+  @Input() labelText: string = '';
+  @Input() tooltipText: string = '';
+  @Input() asterisk: boolean = false;
+  @Input() tooltip: boolean = false;
 }

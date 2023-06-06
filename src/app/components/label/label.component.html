@@ -1,8 +1,12 @@
-<div>
+<div class="label">
   <div>
-    <span class="label-text">{{label_text}}</span>
+    <span class="label-text">{{labelText}}</span>
     <span *ngIf="asterisk" class="asterisk">&#42;</span>
-    <span *ngIf="tooltip" class="info">&#63;</span>
+    <div class="tooltip">
+      <span *ngIf="tooltip" class="info">&#63;
+        <span class="tooltip-text">{{tooltipText}}</span>
+      </span>
+    </div>
   </div>
 
   <div>
@@ -11,6 +15,9 @@
 </div>
 
 <style>
+  .label {
+    width: auto;
+  }
   .label-text {
     font-family: 'Inter';
     font-size: 14px;
@@ -32,5 +39,22 @@
     border-radius: 50%;
     border: 1px solid;
     margin-left: 5px;
+  }
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+  }
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #6C757D;
+    color: #FFFFFF;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    bottom: 100%;
   }
 </style>
