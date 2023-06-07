@@ -1,16 +1,19 @@
 <div class="label">
-  <div>
-    <div class="tooltip">
-      <div class="truncate">
-        <span class="label-text">{{labelText}}</span>
+  <div class="label-block">
+    <div class="truncate">
+      <div class="tooltip">
+        <div class="label-text">{{labelText}}</div>
+        <div class="tooltip-text">{{labelText}}</div>
       </div>
-      <span class="tooltip-text">{{labelText}}</span>
     </div>
-    <span *ngIf="asterisk" class="asterisk">&#42;</span>
+
+    <div>
+      <div *ngIf="asterisk" class="asterisk">&#42;</div>
+    </div>
     <div class="tooltip">
-      <span *ngIf="tooltip" class="info">&#63;
-        <span class="tooltip-text">{{tooltipText}}</span>
-      </span>
+      <div *ngIf="tooltip" class="info">&#63;
+        <div class="tooltip-text">{{tooltipText}}</div>
+      </div>
     </div>
   </div>
 
@@ -20,8 +23,13 @@
 </div>
 
 <style>
+  .label-block {
+    /*display: inline-block;*/
+    display: flex;
+    /*width: inherit;*/
+  }
   .label {
-    width: auto;
+    /*width: 100%;*/
   }
   .label-text {
     font-family: 'Inter';
@@ -47,6 +55,8 @@
     margin-left: 5px;
   }
   .tooltip {
+    width: inherit;
+    /*block-size: 80%;*/
     position: relative;
     display: inline-block;
   }
@@ -65,8 +75,7 @@
     bottom: 100%;
   }
   .truncate {
-    display: inline-block;
-    width: 200px;
+    width: 100%;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
