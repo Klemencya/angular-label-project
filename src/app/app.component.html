@@ -5,9 +5,10 @@
     [tooltip]="true"
     [tooltipText]="'Надо бы заполнить это поле'"
   >
-    <input type="checkbox">
+    <input type="text">
   </app-label>
 </div>
+
 
 <div class="label-content">
   <app-label
@@ -15,5 +16,32 @@
     [asterisk]="false"
     [tooltip]="true"
     [tooltipText]="'Можно не заполнять это поле'"
-  ><input type="date"></app-label>
+  ><input type="number"></app-label>
 </div>
+
+
+<div class="label-content">
+  <app-label
+    [labelText]="'TextArea'"
+    [asterisk]="true"
+    [tooltip]="false"
+    [tooltipText]="'TextArea'"
+  ><textarea rows="4"></textarea></app-label>
+</div>
+
+
+<div class="label-content">
+  <app-label
+    [labelText]="'DropDown'"
+    [asterisk]="false"
+    [tooltip]="false"
+    [tooltipText]="''"
+  >
+    <select name="Number">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+    </select>
+  </app-label>
+</div>
+

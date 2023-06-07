@@ -12,7 +12,7 @@ import {LabelComponent} from "./components/label/label.component";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

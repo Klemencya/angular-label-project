@@ -1,10 +1,11 @@
 .label {
   width: 100%;
-  margin-bottom: 0.25rem;
 }
 .label-block {
   box-sizing: border-box;
   display: flex;
+  width: 100%;
+  margin-bottom: 0.25rem;
 }
 .label-text {
   font-family: 'Inter';
@@ -30,7 +31,7 @@
   margin-left: 5px;
 }
 .tooltip {
-  width: 100%;
+  max-width: 100%;
   position: relative;
 }
 .tooltip:hover .tooltip-text {
@@ -48,8 +49,28 @@
   bottom: 100%;
   text-align: center;
 }
+.expand {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.expand:hover .expand-text {
+  visibility: visible;
+}
+.expand .expand-text {
+  visibility: hidden;
+  font-family: 'Inter';
+  width: 120px;
+  background-color: #6C757D;
+  color: #FFFFFF;
+  padding: 5px;
+  border-radius: 6px;
+  position: absolute;
+  bottom: 100%;
+  text-align: center;
+}
 .truncate {
-  width: 100%;
+  max-width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
