@@ -1,83 +1,26 @@
 <div class="label">
   <div class="label-block">
-    <div class="truncate">
-      <div class="tooltip">
-        <div class="label-text">{{labelText}}</div>
-        <div class="tooltip-text">{{labelText}}</div>
+
+    <div class="tooltip">
+      <div class="truncate">
+        <span class="label-text">{{labelText}}</span>
       </div>
+      <div class="tooltip-text">{{labelText}}</div>
     </div>
 
     <div>
       <div *ngIf="asterisk" class="asterisk">&#42;</div>
     </div>
+
     <div class="tooltip">
       <div *ngIf="tooltip" class="info">&#63;
         <div class="tooltip-text">{{tooltipText}}</div>
       </div>
     </div>
+
   </div>
 
   <div>
     <ng-content></ng-content>
   </div>
 </div>
-
-<style>
-  .label-block {
-    /*display: inline-block;*/
-    display: flex;
-    /*width: inherit;*/
-  }
-  .label {
-    /*width: 100%;*/
-  }
-  .label-text {
-    font-family: 'Inter';
-    font-size: 14px;
-    color: #6C757D;
-    width: inherit;
-  }
-  .asterisk {
-    font-family: 'Inter';
-    font-size: 12px;
-    color: #DC1919
-  }
-  .info {
-    color: #BBC1CC;
-    display: inline-block;
-    vertical-align: center;
-    text-align: center;
-    width: 12.6px;
-    height: 12.6px;
-    font-size: 0.8em;
-    border-radius: 50%;
-    border: 1px solid;
-    margin-left: 5px;
-  }
-  .tooltip {
-    width: inherit;
-    /*block-size: 80%;*/
-    position: relative;
-    display: inline-block;
-  }
-  .tooltip:hover .tooltip-text {
-    visibility: visible;
-  }
-  .tooltip .tooltip-text {
-    visibility: hidden;
-    font-family: 'Inter';
-    width: 120px;
-    background-color: #6C757D;
-    color: #FFFFFF;
-    padding: 5px;
-    border-radius: 6px;
-    position: absolute;
-    bottom: 100%;
-  }
-  .truncate {
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-</style>
