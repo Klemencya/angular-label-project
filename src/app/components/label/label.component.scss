@@ -33,31 +33,12 @@
 .tooltip {
   max-width: 100%;
   position: relative;
+  display: inline-grid;
 }
 .tooltip:hover .tooltip-text {
   visibility: visible;
 }
 .tooltip .tooltip-text {
-  visibility: hidden;
-  font-family: 'Inter';
-  width: 120px;
-  background-color: #6C757D;
-  color: #FFFFFF;
-  padding: 5px;
-  border-radius: 6px;
-  position: absolute;
-  bottom: 100%;
-  text-align: center;
-}
-.expand {
-  max-width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-.expand:hover .expand-text {
-  visibility: visible;
-}
-.expand .expand-text {
   visibility: hidden;
   font-family: 'Inter';
   width: 120px;
