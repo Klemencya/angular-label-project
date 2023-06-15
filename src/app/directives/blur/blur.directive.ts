@@ -5,11 +5,13 @@ import {Directive, ElementRef, Input} from "@angular/core";
 })
 
 export class BlurDirective {
-  @Input() blur = false
-
-  constructor(private el: ElementRef) {}
-  ngOnChanges(){
-    if (this.blur) {
+  @Input()
+  public get blur() {
+    return this._blur
+  }
+  public set blur(arg: boolean) {
+    this._blur = arg
+    if (this._blur) {
       this.el.nativeElement.style.filter = 'blur(4px)';
       this.el.nativeElement.style.pointerEvents = 'none';
     } else {
@@ -17,4 +19,6 @@ export class BlurDirective {
       this.el.nativeElement.style.pointerEvents = 'auto';
     }
   }
+  private _blur: boolean
+  constructor(private el: ElementRef) {}
 }

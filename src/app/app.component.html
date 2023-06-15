@@ -1,4 +1,4 @@
-<div blurDirective [blur]="false">
+<div>
   <div class="label-content">
     <app-label
       [labelText]="'Обязательно к заполнению'"
@@ -10,8 +10,10 @@
     </app-label>
   </div>
 
+  <button (click)="current_blur = !current_blur">Change blur status</button>
 
-  <div class="label-content" blurDirective [blur]="true">
+
+  <div class="label-content" blurDirective [blur]=current_blur>
     <app-label
       [labelText]="'Не очень обязательно к заполнению'"
       [asterisk]="false"
@@ -32,7 +34,7 @@
   </div>
 
 
-  <div class="label-content" blurDirective [blur]="true">
+  <div class="label-content" blurDirective [blur]=current_blur>
     <app-label
       [labelText]="'DropDown'"
       [asterisk]="false"
@@ -54,7 +56,7 @@
       [tooltip]="true"
       [tooltipText]="'Очень важно'"
     >
-      <div blurDirective [blur]="true">
+      <div blurDirective [blur]=current_blur>
         <h1>Бегемоты</h1>
         <p>Бегемоты, гиппопотамы (лат. Hippopotamus) — род парнокопытных, в который входит один современный вид, обыкновенный бегемот, и значительное число вымерших.</p>
       </div>
