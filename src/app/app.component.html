@@ -1,47 +1,64 @@
-<div class="label-content">
-  <app-label
-    [labelText]="'Обязательно к заполнению'"
-    [asterisk]="true"
-    [tooltip]="true"
-    [tooltipText]="'Надо бы заполнить это поле'"
-  >
-    <input type="text">
-  </app-label>
-</div>
+<div blurDirective [blur]="false">
+  <div class="label-content">
+    <app-label
+      [labelText]="'Обязательно к заполнению'"
+      [asterisk]="true"
+      [tooltip]="true"
+      [tooltipText]="'Надо бы заполнить это поле'"
+    >
+      <input type="text">
+    </app-label>
+  </div>
 
 
-<div class="label-content">
-  <app-label
-    [labelText]="'Не очень обязательно к заполнению'"
-    [asterisk]="false"
-    [tooltip]="true"
-    [tooltipText]="'Можно не заполнять это поле'"
-  ><input type="number"></app-label>
-</div>
+  <div class="label-content" blurDirective [blur]="true">
+    <app-label
+      [labelText]="'Не очень обязательно к заполнению'"
+      [asterisk]="false"
+      [tooltip]="true"
+      [tooltipText]="'Можно не заполнять это поле'"
+    ><input type="number"></app-label>
+  </div>
 
 
-<div class="label-content">
-  <app-label
-    [labelText]="'TextArea'"
-    [asterisk]="true"
-    [tooltip]="false"
-    [tooltipText]="'TextArea'"
-  ><textarea rows="4" style="max-width: 100%"></textarea></app-label>
-</div>
+  <div class="label-content">
+    <app-label
+      [labelText]="'TextArea'"
+      [asterisk]="true"
+      [tooltip]="false"
+    >
+      <textarea rows="4" style="max-width: 100%"></textarea>
+    </app-label>
+  </div>
 
 
-<div class="label-content">
-  <app-label
-    [labelText]="'DropDown'"
-    [asterisk]="false"
-    [tooltip]="false"
-    [tooltipText]="''"
-  >
-    <select name="Number">
-      <option>1</option>
-      <option>2</option>
-      <option>3</option>
-    </select>
-  </app-label>
+  <div class="label-content" blurDirective [blur]="true">
+    <app-label
+      [labelText]="'DropDown'"
+      [asterisk]="false"
+      [tooltip]="false"
+      [tooltipText]="''"
+    >
+      <select name="Number">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+    </app-label>
+  </div>
+
+  <div class="label-content">
+    <app-label
+      [labelText]="'Просто текст про бегемотиков'"
+      [asterisk]="true"
+      [tooltip]="true"
+      [tooltipText]="'Очень важно'"
+    >
+      <div blurDirective [blur]="true">
+        <h1>Бегемоты</h1>
+        <p>Бегемоты, гиппопотамы (лат. Hippopotamus) — род парнокопытных, в который входит один современный вид, обыкновенный бегемот, и значительное число вымерших.</p>
+      </div>
+    </app-label>
+  </div>
 </div>
 
