@@ -22,7 +22,7 @@
   </div>
 
 
-  <div class="label-content">
+  <div class="label-content" *blurDirective="current_blur">
     <app-label
       [labelText]="'TextArea'"
       [asterisk]="true"
@@ -48,7 +48,7 @@
     </app-label>
   </div>
 
-  <div class="label-content">
+  <div class="label-content" *blurDirective="current_blur">
     <app-label
       [labelText]="'Просто текст про бегемотиков'"
       [asterisk]="true"

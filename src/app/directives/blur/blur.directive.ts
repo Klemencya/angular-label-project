@@ -12,32 +12,30 @@ export class BlurDirective {
               private container: ViewContainerRef,
               private renderer: Renderer2) {}
 
-  // @ViewChild(this.template, {static: false}) childElement: ElementRef;
-
   @Input()
   public set blurDirective(blurStatus: boolean) {
     this._blur = blurStatus;
 
-
+    this.container.clear()
+    this.container.insert(this.template.createEmbeddedView(null))
+    const element = (this.container.get(0) as any).rootNodes[0]
       // const div = this.renderer.createElement('div');
       // this.renderer.setStyle(div, 'filter', 'blur(5px)');
       // this.renderer.appendChild(div, this.template.elementRef.nativeElement);
       // this.renderer.appendChild(this.el.nativeElement, div);
-    if (this._blur) {
-      this.container.clear()
 
-      this.container.insert(this.template.createEmbeddedView(null))
-      const element = (this.container.get(0) as any).rootNodes[0]
+      console.log(this.container.element)
+    if (this._blur) {
       this.renderer.setStyle(element, 'filter', 'blur(5px)');
       this.renderer.setStyle(element, 'pointerEvents', 'none');
+      const div = this.renderer.createElement('div');
+      this.renderer.addClass(div, 'loader');
+      this.renderer.appendChild(element, div);
       // this.renderer.appendChild(element, this.template.elementRef.nativeElement);
       // console.log(this.container.element.nativeElement)
       // console.log(this.template.elementRef.nativeElement)
       // this.renderer.setStyle(this.template.elementRef.nativeElement, 'filter', 'blur(5px)')
     } else {
-      this.container.clear()
-      this.container.insert(this.template.createEmbeddedView(null))
-      const element = (this.container.get(0) as any).rootNodes[0]
       this.renderer.setStyle(element, 'filter', 'blur(0)');
       this.renderer.setStyle(element, 'pointerEvents', 'auto');
       // this.renderer.appendChild(element, this.template.elementRef.nativeElement);

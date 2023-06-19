@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import {LabelComponent} from "./components/label/label.component";
 import {BlurModule} from "./directives/blur/blur.module";
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import {TooltipModule} from "primeng/tooltip";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     AppRoutingModule,
     BlurModule,
     ProgressSpinnerModule,
+    TooltipModule
   ],
   providers: [],
   bootstrap: [AppComponent]
