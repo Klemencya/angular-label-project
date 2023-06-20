@@ -24,13 +24,26 @@ export class BlurDirective {
       // this.renderer.appendChild(div, this.template.elementRef.nativeElement);
       // this.renderer.appendChild(this.el.nativeElement, div);
 
-      console.log(this.container.element)
+    let height = element.offsetHeight;
+    let width = element.offsetWidth;
+
     if (this._blur) {
-      this.renderer.setStyle(element, 'filter', 'blur(5px)');
-      this.renderer.setStyle(element, 'pointerEvents', 'none');
-      const div = this.renderer.createElement('div');
-      this.renderer.addClass(div, 'loader');
-      this.renderer.appendChild(element, div);
+
+      const blurDiv = this.renderer.createElement('div');
+      this.renderer.setStyle(blurDiv, 'backdrop-filter', 'blur(5px)');
+      this.renderer.setStyle(blurDiv, 'pointerEvents', 'none');
+      this.renderer.setStyle(blurDiv, 'position', 'absolute');
+      this.renderer.setStyle(blurDiv, 'height', `100%`);
+      this.renderer.setStyle(blurDiv, 'width', `100%`);
+      this.renderer.setStyle(blurDiv, 'top', `0`);
+      this.renderer.setStyle(blurDiv, 'left', `0`);
+
+      const loaderDiv = this.renderer.createElement('div');
+      this.renderer.setStyle(loaderDiv, 'z-index', `1`);
+      this.renderer.addClass(loaderDiv, 'loader');
+
+      this.renderer.appendChild(element, loaderDiv);
+      this.renderer.appendChild(element, blurDiv);
       // this.renderer.appendChild(element, this.template.elementRef.nativeElement);
       // console.log(this.container.element.nativeElement)
       // console.log(this.template.elementRef.nativeElement)
