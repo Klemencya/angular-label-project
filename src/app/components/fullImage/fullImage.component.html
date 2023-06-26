@@ -1,0 +1,24 @@
+
+<div class="p-image-mask p-component-overlay p-component-overlay-enter" *ngIf="maskVisible" style="overflow: hidden">
+  <div class="p-image-toolbar" style="z-index: 10000">
+    <button class="p-image-action p-link" (click)="rotateRight()" type="button">
+      <i class="pi pi-refresh"></i>
+    </button>
+    <button class="p-image-action p-link" (click)="rotateLeft()" type="button">
+      <i class="pi pi-undo"></i>
+    </button>
+    <button class="p-image-action p-link" (click)="zoomOut()" type="button" [disabled]="zoomOutDisabled()">
+      <i class="pi pi-search-minus"></i>
+    </button>
+    <button class="p-image-action p-link" (click)="zoomIn()" type="button" [disabled]="zoomInDisabled()">
+      <i class="pi pi-search-plus"></i>
+    </button>
+    <button class="p-image-action p-link" type="button">
+      <i class="pi pi-times" (click)="closeDialog()"></i>
+    </button>
+  </div>
+  <div *ngIf="previewVisible" [@animation]="{value: 'visible', params: {showTransitionParams: showTransitionOptions, hideTransitionParams: hideTransitionOptions}}"
+       (@animation.start)="onAnimationStart($event)" (@animation.done)="onAnimationEnd($event)">
+    <img [attr.src]="_src" class="p-image-preview" [ngStyle]="imagePreviewStyle()" (click)="onPreviewImageClick()"/>
+  </div>
+</div>

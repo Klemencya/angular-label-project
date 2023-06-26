@@ -7,20 +7,29 @@ import {LabelComponent} from "./components/label/label.component";
 import {BlurModule} from "./directives/blur/blur.module";
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import {TooltipModule} from "primeng/tooltip";
+import {CarouselModule} from "primeng/carousel";
+import {ImageModule} from "./components/image/image";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FullImageComponent} from "./components/fullImage/fullImage.component";
+import {DialogService} from "primeng/dynamicdialog";
 
 @NgModule({
   declarations: [
     AppComponent,
     LabelComponent,
+    FullImageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BlurModule,
     ProgressSpinnerModule,
-    TooltipModule
+    TooltipModule,
+    CarouselModule,
+    ImageModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [DialogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
