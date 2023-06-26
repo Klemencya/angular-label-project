@@ -19,6 +19,7 @@ import {PrimeNGConfig} from "primeng/api";
       ])
     ])
   ],
+  styleUrls: ['fullImage.component.scss'],
 })
 
 export class FullImageComponent {
@@ -129,7 +130,7 @@ export class FullImageComponent {
   }
 
   closeDialog() {
-    this.ref.close("Window closed")
+    this.ref.close()
   }
 
   protected readonly console = console;

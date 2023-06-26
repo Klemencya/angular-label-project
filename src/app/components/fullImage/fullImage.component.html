@@ -1,6 +1,6 @@
 
-<div class="p-image-mask p-component-overlay p-component-overlay-enter" *ngIf="maskVisible" style="overflow: hidden">
-  <div class="p-image-toolbar" style="z-index: 10000">
+<div class="p-image-mask p-component-overlay p-component-overlay-enter overflow-hidden" *ngIf="maskVisible">
+  <div class="p-image-toolbar high-z-index">
     <button class="p-image-action p-link" (click)="rotateRight()" type="button">
       <i class="pi pi-refresh"></i>
     </button>

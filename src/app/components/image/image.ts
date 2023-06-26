@@ -149,21 +149,20 @@ export class Image implements AfterContentInit {
             this.rotate = 0;
             this.scale = 1;
         }
-        console.log('jhvhbkjhgc')
         this.previewClick = false;
     }
 
-    expandPicture() {
-      console.log('mememe')
+  expandPicture() {
       this.ref = this.dialogService.open(FullImageComponent, {
         width: '100%',
-        height: '100vh',
+        height: '100%',
+        style: {'max-height': '100%'},
         data: {
           src: this.src,
           alt: this.alt,}
       });
 
-      this.ref.onClose.subscribe(result=>{console.log(result)})
+      // this.ref.onClose.subscribe(result=>{console.log(result)})
     }
 
     onPreviewImageClick() {
