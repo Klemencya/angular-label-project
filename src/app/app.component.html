@@ -1,75 +1,9 @@
-<div>
-  <div class="label-content">
-    <app-label
-      [labelText]="'Обязательно к заполнению'"
-      [asterisk]="true"
-      [tooltip]="true"
-      [tooltipText]="'Надо бы заполнить это поле'"
-    >
-      <input type="text">
-    </app-label>
-  </div>
-  <button (click)="current_blur = !current_blur">Change blur status</button>
-
-
-  <div class="label-content" *blurDirective=current_blur>
-    <app-label
-      [labelText]="'Не очень обязательно к заполнению'"
-      [asterisk]="false"
-      [tooltip]="true"
-      [tooltipText]="'Можно не заполнять это поле'"
-    ><input type="number"></app-label>
-  </div>
-
-
-  <div class="label-content" *blurDirective="current_blur">
-    <app-label
-      [labelText]="'TextArea'"
-      [asterisk]="true"
-      [tooltip]="false"
-    >
-      <textarea rows="4" style="max-width: 100%"></textarea>
-    </app-label>
-  </div>
-
-
-  <div class="label-content">
-    <app-label
-      [labelText]="'DropDown'"
-      [asterisk]="false"
-      [tooltip]="false"
-      [tooltipText]="''"
-    >
-      <select name="Number">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-      </select>
-    </app-label>
-  </div>
-
-  <div class="label-content" *blurDirective="current_blur">
-    <app-label
-      [labelText]="'Просто текст про бегемотиков'"
-      [asterisk]="true"
-      [tooltip]="true"
-      [tooltipText]="'Очень важно'"
-    >
-      <div>
-        <h1>Бегемоты</h1>
-        <p>Бегемоты, гиппопотамы (лат. Hippopotamus) — род парнокопытных, в который входит один современный вид, обыкновенный бегемот, и значительное число вымерших.</p>
-      </div>
-    </app-label>
-  </div>
-
-  <p-image [src]="'https://drasler.ru/wp-content/uploads/2019/05/%D0%91%D0%BE%D0%BB%D1%8C%D1%88%D0%B8%D0%B5-%D0%BA%D0%B0%D1%80%D1%82%D0%B8%D0%BD%D0%BA%D0%B8-%D0%BD%D0%B0-%D1%80%D0%B0%D0%B1%D0%BE%D1%87%D0%B8%D0%B9-%D1%81%D1%82%D0%BE%D0%BB-%D1%81%D0%BA%D0%B0%D1%87%D0%B0%D1%82%D1%8C-%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE-10.jpg'" alt="picture" width="400px" height="250px" [preview]="true"></p-image>
-
-  <div class="carousel">
-    <p-carousel [value]="pictures" [circular]="true">
-      <ng-template let-picture pTemplate="item">
-          <p-image [src]=picture alt="picture" width="400px" height="250px" [preview]="true"></p-image>
-      </ng-template>
-    </p-carousel>
-  </div>
-</div>
-
+<ng-doc-root>
+	<ng-doc-navbar [leftContent]="leftContent">
+		<ng-template #leftContent>
+			<h3 style="margin: 0">MyAwesomeDoc</h3>
+		</ng-template>
+	</ng-doc-navbar>
+	<ng-doc-sidebar></ng-doc-sidebar>
+<router-outlet></router-outlet>
+</ng-doc-root>

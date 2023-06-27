@@ -2,6 +2,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@ng-doc/generated": [
+        ".ng-doc/angular-label-project/index.ts"
+      ],
+      "@ng-doc/generated/*": [
+        ".ng-doc/angular-label-project/*"
+      ]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
