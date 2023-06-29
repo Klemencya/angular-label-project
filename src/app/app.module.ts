@@ -30,6 +30,12 @@ import {RouterModule} from '@angular/router';
     CarouselModule,
     ImageModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot([
+      {
+        path: 'docs',
+        loadChildren: () => import('./components/docs/docs.module').then((m: typeof import('./components/docs/docs.module')) => m.DocsModule),
+      },
+    ]),
   ],
   providers: [DialogService],
   bootstrap: [AppComponent]
