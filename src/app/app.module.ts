@@ -22,12 +22,6 @@ import {RouterModule} from '@angular/router';
     FullImageComponent
   ],
   imports: [
-    RouterModule.forRoot([
-      {
-        path: 'docs',
-        loadChildren: () => import('./components/docs/docs.module').then((m: typeof import('./components/docs/docs.module')) => m.DocsModule),
-      },
-    ]),
     BrowserModule,
     AppRoutingModule,
     BlurModule,
