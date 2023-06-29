@@ -4,8 +4,8 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@ng-doc/generated": [".ng-doc/project-folder-name/index.ts"],
-      "@ng-doc/generated/*": [".ng-doc/project-folder-name/*"]
+      "@ng-doc/generated": [".ng-doc/angular-label-project/index.ts"],
+      "@ng-doc/generated/*": [".ng-doc/angular-label-project/*"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
