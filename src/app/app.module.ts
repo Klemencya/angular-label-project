@@ -13,6 +13,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FullImageComponent} from "./components/fullImage/fullImage.component";
 import {DialogService} from "primeng/dynamicdialog";
 
+import {RouterModule} from '@angular/router';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +22,12 @@ import {DialogService} from "primeng/dynamicdialog";
     FullImageComponent
   ],
   imports: [
+    RouterModule.forRoot([
+      {
+        path: 'docs',
+        loadChildren: () => import('./components/docs/docs.module').then((m: typeof import('./components/docs/docs.module')) => m.DocsModule),
+      },
+    ]),
     BrowserModule,
     AppRoutingModule,
     BlurModule,

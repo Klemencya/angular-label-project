@@ -2,6 +2,11 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@ng-doc/generated": [".ng-doc/project-folder-name/index.ts"],
+      "@ng-doc/generated/*": [".ng-doc/project-folder-name/*"]
+    },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
