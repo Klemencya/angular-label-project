@@ -1,5 +1,8 @@
 import {Component, Input} from '@angular/core'
 
+/**
+ * Этот компонент отвечает за создание подписей к различным полям
+ */
 @Component({
   selector: 'app-label',
   templateUrl: 'label.component.html',
@@ -7,7 +10,13 @@ import {Component, Input} from '@angular/core'
 })
 
 export class LabelComponent {
+  /**
+   * Текст, который будет отображаться в label
+   */
   @Input() labelText: string = '';
+  /**
+   * Текст, который будет отображаться в тултипе
+   */
   @Input() tooltipText: string = '';
   @Input() asterisk: boolean = false;
   @Input() tooltip: boolean = false;
