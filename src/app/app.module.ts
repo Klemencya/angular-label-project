@@ -35,7 +35,7 @@ import {RouterModule} from '@angular/router';
         path: 'docs',
         loadChildren: () => import('./components/docs/docs.module').then((m: typeof import('./components/docs/docs.module')) => m.DocsModule),
       },
-    ]),
+    ], {enableTracing: true}),
   ],
   providers: [DialogService],
   bootstrap: [AppComponent]

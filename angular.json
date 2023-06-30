@@ -40,7 +40,7 @@
               },
               {
                 "glob": "**/*",
-                "input": ".ng-doc/project-name/assets",
+                "input": ".ng-doc/angular-label-project/assets",
                 "output": "assets/ng-doc"
               }
             ],

@@ -1,7 +1,7 @@
 import {NgDocConfiguration} from '@ng-doc/builder';
 
 const config: NgDocConfiguration = {
-  routePrefix: 'docs',
+  routePrefix: '',
 };
 
 export default config;
