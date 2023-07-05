@@ -33,13 +33,20 @@ import {DialogService} from "primeng/dynamicdialog";
     CarouselModule,
     ImageModule,
     BrowserAnimationsModule,
-      NgDocNavbarModule,
-      NgDocSidebarModule,
-      RouterModule.forRoot(NG_DOC_ROUTING, {scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', scrollOffset: [0, 70]}),
-      NgDocModule.forRoot(),
-      NgDocGeneratedModule.forRoot()
-],
+    NgDocNavbarModule,
+    NgDocSidebarModule,
+    RouterModule.forRoot(NG_DOC_ROUTING, {
+      scrollPositionRestoration: 'enabled',
+      anchorScrolling: 'enabled',
+      scrollOffset: [0, 70]
+    }),
+    NgDocModule.forRoot(),
+    NgDocGeneratedModule.forRoot()
+  ],
   providers: [DialogService, provideSearchEngine(NgDocDefaultSearchEngine)],
+  exports: [
+    LabelComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

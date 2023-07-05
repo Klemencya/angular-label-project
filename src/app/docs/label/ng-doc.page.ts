@@ -1,6 +1,6 @@
 import {NgDocPage} from '@ng-doc/core';
 
-const LabelPage: NgDocPage = {
+export const LabelPage: NgDocPage = {
 	title: `Label`,
 	mdFile: './index.md',
 };
